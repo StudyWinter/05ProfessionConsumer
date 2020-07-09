@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>信息页面</title>
+</head>
+<body>
+
+<h2>欢迎来到注册页面</h2>
+
+<!--添加专业-->
+<div>
+    <form action="/addprofession" method="post">
+        <label for="">proname</label>
+        <input type="text" name="proname" placeholder="proname">
+
+        <label for="">major</label>
+        <input type="text" name="major" placeholder="major">
+        <label for="">pid</label>
+        <input type="text" name="pid" placeholder="pid">
+        <label for="">code</label>
+        <input type="text" name="code" placeholder="code">
+
+        <input type="submit" value="添加专业">
+
+        <h2 th:utext="${msg}"></h2>    <!--显示add-->
+        <h2 th:utext="${msg1}"></h2>
+    </form>
+</div>
+
+
+
+<!--删除专业-->
+<div>
+    <form action="/deleteprofession" method="post">
+        <input type="text" name="proname" placeholder="proname">
+        <input type="submit" value="删除专业">
+
+        <h2 th:utext="${msg2}"></h2>    <!--显示delete-->
+        <h2 th:utext="${msg3}"></h2>
+
+    </form>
+</div>
+
+
+<!--更新专业信息-->
+<div>
+    <form action="/updateprofession" method="post">
+        <input type="text" name="proname" placeholder="proname">
+        <input type="text" name="major" placeholder="major">
+        <input type="text" name="code" placeholder="code">
+        <input type="submit" value="修改专业信息">
+
+        <h2 th:utext="${msg4}"></h2>    <!--显示update-->
+        <h2 th:utext="${msg5}"></h2>
+    </form>
+</div>
+
+
+<!--得到一个专业--->
+<div>
+    <form action="/getprofession" method="post">
+        <input type="text" name="proname" placeholder="proname">
+        <input type="submit" value="查询专业">
+
+        <h2 th:utext="${msg6}"></h2>    <!--显示get-->
+        <h2 th:utext="${msg7}"></h2>
+    </form>
+</div>
+
+<!--返回所有专业-->
+<div>
+    <form action="/getallprofession" method="post">
+        <input type="submit" value="查询所有专业">
+    </form>
+</div>
+
+</body>
+</html>
